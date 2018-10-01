@@ -39,6 +39,14 @@ Exemple d'entrée:
  */
 
 function searchWordFilter(items, search) {
+  let tableau = items.filter(function(item, mot){
+      mot = search;
+      mot = mot.toLowerCase();
+      item = item.toLowerCase();
+      item = item.split(" ");
+      if (item.includes(mot) == true) {item = item.join(" "); return item;}
+  })
+  return tableau;
 }
 
 // Ne pas modifier l'export
